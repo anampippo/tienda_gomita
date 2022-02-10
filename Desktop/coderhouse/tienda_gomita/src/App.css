@@ -1,0 +1,31 @@
+
+h1 {
+  font-family:'Dongle', sans-serif;
+  color: orangered  ;
+}
+
+
+@media (min-width: 576px) {
+  h1 {
+    color: rgb (255, 87, 51) ;
+  }
+}
+
+
+header {
+  border-bottom: 2px solid rgb(18, 219, 28);
+}
+
+header .header-container {
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  align-items: center;
+
+}
+
+.header-container img {
+  min-width: 80px;
+  max-width: 80px;
+}

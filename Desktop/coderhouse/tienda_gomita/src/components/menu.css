@@ -1,0 +1,18 @@
+
+
+ul {
+    display: flex;
+}
+
+ul li {
+    color: turquoise;
+    font-size: 15px;
+    list-style: none;
+    margin-left: 70px;
+
+    }
+
+    .logoCarrito {
+        max-width: 5px;
+        min-width: 10px;
+    }
