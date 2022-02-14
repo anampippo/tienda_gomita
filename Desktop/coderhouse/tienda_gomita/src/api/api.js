@@ -32,7 +32,7 @@
    return new Promise  ((resolve, reject) =>  {
     setTimeout (() =>  {
         resolve (items);  
-      }, 8000);
+      }, 2000);
   });
  }
 

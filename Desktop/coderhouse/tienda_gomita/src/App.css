@@ -25,7 +25,8 @@ header .header-container {
 
 }
 
-.header-container img {
+.logo {
   min-width: 80px;
   max-width: 80px;
 }
+

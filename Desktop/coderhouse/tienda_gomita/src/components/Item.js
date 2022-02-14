@@ -1,4 +1,5 @@
  function Item ({item}) {
+   console.log (item);
     return (
     <div>
      <img src={item.pictureUrl} alt="imagen"/>
