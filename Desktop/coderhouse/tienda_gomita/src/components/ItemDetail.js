@@ -1,6 +1,6 @@
 
 
-function ItemDetail ({items}) {
+function ItemDetail ({item}) {
     return (
             <div>
              <img src={item.pictureUrl} alt="imagen"/>

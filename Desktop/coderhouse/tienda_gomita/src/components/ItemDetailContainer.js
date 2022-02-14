@@ -4,14 +4,14 @@ import ItemDetail from './ItemDetail';
 
 
 export default function ItemDetailContainer () {
- const [productoList, setProductoList] = useState();
+ const [item, setItem] = useState();
  
 useEffect (() => {
 const itemId = 1; 
 
     getItems ().then ((items) => {
      const item =  items.find ((i) => i.id === itemId)
-     setProductoList (item);
+     setItem (item);
 
     });
  }, [] );
