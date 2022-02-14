@@ -1,5 +1,6 @@
 import { counter } from "@fortawesome/fontawesome-svg-core";
 import React, {useState} from 'react';
+import './itemCount.css'
 
 
 
@@ -26,9 +27,11 @@ function ItemCount ({stock ,initial, onAdd}){
   return (
     <div className="contador" >
          <button onClick={agregarItems}>+</button>
+         <span className="botonContador"> {count} </span>
          <button onClick={sacarItems}>-</button>
-         <span> {count} </span>
-         <button>Agregar al carrito</button>
+         <div>
+         <button className="agregarCarrito">Agregar al carrito</button>
+         </div>
      </div>
   )
 }

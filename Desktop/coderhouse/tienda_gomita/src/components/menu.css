@@ -1,18 +1,37 @@
+.appContenedor {
+    margin: 10px auto;
+}
 
+.appContenedor a {
+    text-decoration: none;
+    color: black;
+}
 
 ul {
     display: flex;
+    font-size: 2em;
+    font-family:'Dongle', sans-serif;
+
 }
 
 ul li {
-    color: rgb(236, 119, 9);
-    font-size: 15px;
+    color: rgb(0, 0, 0);
     list-style: none;
-    margin-left: 70px;
+    margin-left: 60px;
+ }
 
-    }
+ li a.active {
+     font-weight: bold;
+     color: rgb(57, 209, 255);
+ }
+
+
+
 
     .logoCarrito {
+        display: flex;
         max-width: 5px;
-        min-width: 10px;
+        min-width: 5px;
     }
+
+

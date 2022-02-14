@@ -1,6 +1,7 @@
 /* trabajar sobre este js*/
 
 import './App.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Menu from './components/Menu';
 import ItemListContainer from './components/ItemListContainer';
 import  logo from './images/1618.png'
@@ -8,23 +9,49 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
+  <BrowserRouter>
    <div>
      <header>
-       <div className='header-container'>
-         <h1>La gomiteria</h1>
-         <img className='logo' src={logo} alt="logotienda" />
+       <div className='desktopContainer'>  
+       <div className='logoContainer'>
+        <Link to="/">
+          <div className='logo'>
+              <img src={logo} alt="logotienda" />
+              <span> La gomiteria </span>
+          </div>
+        </Link>
         </div>
-        <div>
-          <Menu/>
+         <Menu/>
         </div> 
      </header>
      <main>
        <div className='desktop-container'>
-         <ItemListContainer greetings="La tienda de golosinas" />
-         <ItemDetailContainer/>
+        <Routes>
+          <Route
+            path="/"
+             element={<ItemListContainer greetings="La tienda de golosinas" />}/> 
+
+           <Route 
+             path="/categoria/:categoriaName"
+             element={<ItemListContainer greetings="Categorias" />}/>
+
+          <Route 
+            path="/productos/:itemId"
+             element={<ItemDetailContainer/>}/> 
+
+          <Route 
+           path="*"
+           element = {<div>
+                        <h2>No encontramos la pagina</h2>
+                        <Link to="/" >{'<<'} Volver a La Gomiteria</Link>
+                      </div>}
+          
+          />
+        </Routes>
        </div>
      </main>
    </div>
+  </BrowserRouter>
   );
 }
 
