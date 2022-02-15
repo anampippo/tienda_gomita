@@ -2,12 +2,14 @@
 
 Fotos sacadas de:
 
-https://cdn1.costatic.com/assets/img/guide_achat/articles/el-caramelo-sin-azucar-una-posible-alternativa-para-diabeticos_24a9b8c278039187_rs.jpg
+https://www.mipatente.com/wp-content/uploads/2019/07/gomitas-antiestre%CC%81s-estudiantes.png
 
-https://i0.wp.com/gastronomadas.com.mx/wp-content/uploads/2017/01/El-Chicle-y-sus-curiosidades.jpg?fit=1000%2C622&ssl=1
+https://images.tcdn.com.br/img/img_prod/763838/pirulito_paitball_pops_bala_infinita_64gr_1977_1_20200819135345.jpg
 
-https://media.istockphoto.com/photos/assorted-variety-of-sour-candies-includes-extreme-sour-soft-fruit-picture-id1130170786?k=20&m=1130170786&s=612x612&w=0&h=GGJAXrA7_cIYjBGHIp8UmsZ9hglHwFQn3a-xiVhPHIs=
+https://st.depositphotos.com/1999025/1901/i/600/depositphotos_19011559-stock-photo-heap-of-color-sweets.jpg
 
+
+# Gif video 
 
 ![VideoGif](public/proyecto.gif)
 

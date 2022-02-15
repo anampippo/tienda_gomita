@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Menu from './components/Menu';
 import ItemListContainer from './components/ItemListContainer';
-import  logo from './images/1618.png'
+import  logo from './images/1620.png'
 import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
