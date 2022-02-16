@@ -1,39 +1,39 @@
 import { counter } from "@fortawesome/fontawesome-svg-core";
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './itemCount.css'
 
 
 
+function ItemCount ({stock ,initial, onAdd }){
+const [itemCounter, setItemCounter] = useState(initial);
 
-function ItemCount ({stock ,initial, onAdd}){
- const [count, setCount] = useState(0);
-
- function agregarItems() {
-   if(count < stock) {
-      setCount (count + 1)  
+   function agregarItems() {
+     if(itemCounter < stock) {
+        setItemCounter (itemCounter + 1)  
+     }
    }
- }
-
- function sacarItems() {
-   if(count > 0 ) {
-    setCount (count - 1)
+  
+   function sacarItems() {
+     if(itemCounter > 0 ) {
+      setItemCounter (itemCounter - 1)
+     }
    }
- }
+  
+   function agregarCarrito () {
+     onAdd (itemCounter)
+   }
+   
 
- function agregarCarrito () {
-   onAdd (count)
- }
- 
   return (
     <div className="contador" >
-         <button onClick={agregarItems}>+</button>
-         <span className="botonContador"> {count} </span>
+      <div>
+       <button onClick={agregarItems}>+</button>
+         <p>{itemCounter}</p>
          <button onClick={sacarItems}>-</button>
-         <div>
-         <button className="agregarCarrito">Agregar al carrito</button>
-         </div>
-     </div>
-  )
-}
+      </div>
+         <button className="agregarCarrito" onClick={agregarCarrito}>Agregar al carrito</button>
+    </div>
+    )
+  }  
 
 export default ItemCount;

@@ -32,8 +32,8 @@ useEffect (() => {
 
 
 
-   function agregarItems (count) {
-      console.log('Cantidad agregaga: ', count)
+   function agregarItems (itemCounter) {
+      console.log('Cantidad agregaga: ', itemCounter)
    }
     return (
       <div>
@@ -43,7 +43,7 @@ useEffect (() => {
         <p>Cargando golosinas</p> :
         <ItemList items={itemList}/>
       }
-      <ItemCount stock={5} intial={0} onAdd={agregarItems}/> 
+      <ItemCount stock={5} initial={1} onAdd={agregarItems}/> 
       </div>
     ) 
 }

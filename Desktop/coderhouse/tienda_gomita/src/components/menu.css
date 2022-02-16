@@ -22,16 +22,14 @@ ul li {
 
  li a.active {
      font-weight: bold;
-     color: rgb(57, 209, 255);
+     color: turquoise;
  }
 
 
-
-
-    .logoCarrito {
-        display: flex;
-        max-width: 5px;
-        min-width: 5px;
+.logoCarrito {
+     display: flex;
+     max-width: 5px;
+     min-width: 5px;
     }
 
 

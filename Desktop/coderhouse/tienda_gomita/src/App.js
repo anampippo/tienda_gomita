@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import ItemListContainer from './components/ItemListContainer';
 import  logo from './images/1620.png'
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
           <Route 
             path="/productos/:itemId"
              element={<ItemDetailContainer/>}/> 
+
+          <Route
+          path="/Cart"
+          element={<Cart/>}/>
 
           <Route 
            path="*"

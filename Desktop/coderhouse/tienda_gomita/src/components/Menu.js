@@ -12,7 +12,7 @@ function Menu () {
           <li><NavLink to="/categoria/Chupetines">Chupetines</NavLink></li>
           <li><NavLink to="/categoria/Gomitas">Gomitas</NavLink></li>
           <li><NavLink to="/categoria/Caramelos">Caramelos</NavLink></li>
-          <li><CartWidget/></li>
+          <li><NavLink to="/cart"><CartWidget/></NavLink></li>
         </ul>
       </div>
 
