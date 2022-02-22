@@ -7,9 +7,12 @@ import ItemListContainer from './components/ItemListContainer';
 import  logo from './images/1620.png'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import { CartContext } from './context/CartContext';
+import CartContextProvider from './context/CartContext'
 
 function App() {
   return (
+<CartContextProvider>
   <BrowserRouter>
    <div>
      <header>
@@ -50,13 +53,13 @@ function App() {
                         <h2>No encontramos la pagina</h2>
                         <Link to="/" >{'<<'} Volver a La Gomiteria</Link>
                       </div>}
-          
           />
         </Routes>
        </div>
      </main>
    </div>
   </BrowserRouter>
+</CartContextProvider>  
   );
 }
 

@@ -1,18 +1,20 @@
 import './ItemDetail.css'
 import ItemCount from './ItemCount'
-import { useState }  from 'react';
+import { useContext, useState }  from 'react';
 import { Link } from 'react-router-dom'
+import { CartContext } from '../context/cartContext';
  
 function ItemDetail ({item}) {
 
-const [itemCount, setItemCount] = useState(undefined);
+const [itemCount, setItemCount] = useState(false);
+const {addToCart} = useContext ( CartContext ) ;
+//const {handleMessage} = useContext (MessageContext);
 
 
- function onAddItem (newItemCount) {
-   console.log (newItemCount)
-   setItemCount (newItemCount);
- }
+   function onAddItem (newItemCount) {
+   setItemCount (true);
 
+   };
 
     return (
             <div className='itemContainer'>
@@ -23,12 +25,15 @@ const [itemCount, setItemCount] = useState(undefined);
                 <p className='descripcionProducto'>Descripcion: {item.description}</p>
                 <p className='categoriaProducto'>Categoria: {item.categoria}</p>
                 <p className='stockProducto'>Stock: {item.stock}</p>
-              </div>
-              {
-               !itemCount ?
-              <ItemCount stock={5} initial={1} onAdd={onAddItem}/> :
-              <Link to="/cart">Terminar la compra</Link>
-              }
+              {itemCount ? ( 
+                <Link to="/cart">Terminar la compra</Link>
+               ) : (
+              <ItemCount stock={5} initial={1} onAdd={onAddItem}/>
+              )
+            }
             </div>
-     )}
+        </div>
+     )};
+     
+              
 export default ItemDetail;

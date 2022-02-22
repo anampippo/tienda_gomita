@@ -1,8 +1,18 @@
-import { useParams } from 'react-router-dom';
+import React, { useContext } from "react";
+import { CartContext } from '../context/CartContext'
+const Cart = () => {
 
+const {cart} = useContext (CartContext);
 
-function Cart () {
-    const {Cart} = useParams ();
+    return (
+      <>
+        {cart.map ((item)=> {
+               <div key={item.id}>
+                    <h3>{item.name}</h3>
+               </div>
+        })}
+     </>
+   )
 }
 
 
