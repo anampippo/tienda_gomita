@@ -27,16 +27,16 @@ const copia = [...cart];
       }
     });
   };
- const vaciarCarrito = () => {
+ const vaciarCarro = () => {
       setCart([]);
     };
       
-const deleteItem = (id) => {
+const sacarItem = (id) => {
 setCart(cart.filter((producto) => producto.id !== id))
  }
 
     return (
- <CartContext.Provider value={{cart, addToCart, vaciarCarrito, deleteItem}}>
+ <CartContext.Provider value={{cart, addToCart, vaciarCarro, sacarItem}}>
     {children}
 </CartContext.Provider>
 
