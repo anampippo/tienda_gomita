@@ -36,9 +36,9 @@ setCart(cart.filter((producto) => producto.id !== id))
  }
 
     return (
- <CartContextProvider value={{cart, addToCart, vaciarCarrito, deleteItem}}>
+ <CartContext.Provider value={{cart, addToCart, vaciarCarrito, deleteItem}}>
     {children}
-</CartContextProvider>
+</CartContext.Provider>
 
      )
 }
