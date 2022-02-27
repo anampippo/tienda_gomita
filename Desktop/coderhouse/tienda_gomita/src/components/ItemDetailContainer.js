@@ -2,6 +2,8 @@ import { useEffect , useState } from 'react';
 import {getItems} from '../api/api'
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import {doc,  getDoc } from 'firebase/firestore'
+import {db} from '../firebase'
 
 
 export default function ItemDetailContainer () {
@@ -11,7 +13,7 @@ export default function ItemDetailContainer () {
 
 useEffect (() => {
 
-    getItems ().then ((items) => {
+   /* getItems ().then ((items) => {
      const item =  items.find ((i) => {
         console.log (typeof i.id)
         console.log (typeof itemId)
@@ -20,7 +22,20 @@ useEffect (() => {
       setItem (item);
     }).catch ((error) => {
        console.log (error);
-    });   
+    });   */
+
+    const itemRef  = doc ( db, "items", itemId)
+    getDoc (itemRef)
+    .then ((snapshot) => {
+        if( snapshot.exist ()){
+           const item = {id: snapshot.id, ...snapshot.data()}
+           setItem (item)
+        }
+    })
+    .catch ( error => {
+       console.log (erorr)
+    })
+
  }, [itemId] );
  
 return (

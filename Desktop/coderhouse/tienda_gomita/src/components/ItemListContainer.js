@@ -1,10 +1,11 @@
 
+
 import { useEffect, useState } from 'react';
-import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import { getItems } from '../api/api';
 import { useParams } from 'react-router-dom';
-
+import { getDocs , collection } from 'firebase/firestore';
+import { db } from '../firebase';
 
 function ItemListContainer ({greetings}) {
    
@@ -13,28 +14,28 @@ const { categoriaName } = useParams();
 
 
 
-useEffect (() => {
-   getItems ().then ((items) => {
-      if (!categoriaName) {
-         setItemList (items);
+   useEffect (() => {
+
+      getDocs (collection(db, "items"))
+      .then (snapshot => {
+         const items = snapshot.docs.map ((doc) => ({id: doc.id, ...doc.data () }))
+      if (!categoriaName || categoriaName === "all")  {
+         setItemList (items)
       } else {
-         const itemsCategory = items.filter ((producto) => {
-         return producto.categoria === categoriaName;
-      });
+         setItemList (items.filter (item=> item.categoriaName === categoriaName))
 
-      setItemList (itemsCategory);
-    }
+        }
+      })
+      .catch (error => {
+         console.log (error )
+      })
+    /*  .finally (() => {
+         setLoading (false)
+      })*/
 
-     }).catch ((error) => {
-        console.log (error)
-   });
-}, [categoriaName] );
+    }, [categoriaName] );
 
 
-
-   function agregarItems (itemCounter) {
-      console.log('Cantidad agregaga: ', itemCounter)
-   }
     return (
       <div>
        <h1>{greetings}</h1>
@@ -43,7 +44,6 @@ useEffect (() => {
         <p>Cargando golosinas</p> :
         <ItemList items={itemList}/>
       }
-      <ItemCount stock={5} initial={1} onAdd={agregarItems}/> 
       </div>
     ) 
 }
